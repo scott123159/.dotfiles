@@ -5,4 +5,8 @@ alias vim="nvim"
 alias bu="brew update --force --quiet && brew upgrade --force --quiet"
 alias cls="clear"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(uname) -eq Linux ]] then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
